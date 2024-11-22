@@ -1,0 +1,134 @@
+<div class="swiper">
+    <div class="swiper-wrapper" id="my-slider">
+        <a
+            class="swiper-slide"
+            href="/images/image1.jpeg"
+            data-pswp-width="1440"
+            data-pswp-height="460"
+            target="_blank"
+            data-cropped="true"
+        >
+            <img
+                src="https://images.getduna.com/5fe6067e-0e11-4869-9118-ad3dcc8765c2/qhzhcwtwapkr43eg06en7gbfnula.webp?format=webp"
+                alt="almuerzo"
+            />
+        </a>
+        <a
+            class="swiper-slide"
+            href="/images/image2.jpeg"
+            data-pswp-width="1440"
+            data-pswp-height="460"
+            target="_blank"
+            data-cropped="true"
+        >
+            <img
+                src="https://images.getduna.com/5fe6067e-0e11-4869-9118-ad3dcc8765c2/9hetjuccha5tbr5ouplydc3iyih6.jpg?format=webp"
+                alt="box wow"
+            />
+        </a>
+        <a
+            class="swiper-slide"
+            href="/images/image3.jpeg"
+            data-pswp-width="1440"
+            data-pswp-height="460"
+            target="_blank"
+            data-cropped="true"
+        >
+            <img
+                src="https://images.getduna.com/5fe6067e-0e11-4869-9118-ad3dcc8765c2/dx3enn6dxfq8w65h7ebo6gh0gqx6.jpg?format=webp"
+                alt="familia"
+            />
+        </a>
+        <a
+            class="swiper-slide"
+            href="/images/image4.jpeg"
+            data-pswp-width="1440"
+            data-pswp-height="460"
+            target="_blank"
+            data-cropped="true"
+        >
+            <img
+                src="https://images.getduna.com/5fe6067e-0e11-4869-9118-ad3dcc8765c2/ofvbtrbhn9jekz49eeaax9bva7ss.jpg?format=webp"
+                alt="alitas"
+            />
+        </a>
+        <a
+            class="swiper-slide"
+            href="/images/image4.jpeg"
+            data-pswp-width="1440"
+            data-pswp-height="460"
+            target="_blank"
+            data-cropped="true"
+        >
+            <img
+                src="https://images.getduna.com/5fe6067e-0e11-4869-9118-ad3dcc8765c2/hytij4ten8zajk137m4jgzyyqy0m.jpg?format=webp"
+                alt="promos"
+            />
+        </a>
+    </div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
+<script>
+    import Swiper from "swiper";
+    import "swiper/css";
+    import { Navigation } from "swiper/modules";
+    import "swiper/css/navigation";
+    import PhotoSwipeLightbox from "photoswipe/lightbox";
+    import "photoswipe/style.css";
+
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: "#my-slider",
+        children: "a",
+        pswpModule: () => import("photoswipe"),
+    });
+    lightbox.init();
+
+    const swiper = new Swiper(".swiper", {
+        modules: [Navigation],
+        loop: true,
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+            },
+            1024: {
+                slidesPerView: 1,
+                spaceBetween: 40,
+            },
+        },
+
+        navigation: {
+            prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next",
+        },
+    });
+</script>
+
+<style>
+    .swiper-slide {
+        height: 600px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    @media (max-width: 768px) {
+        .swiper-slide {
+            width: 70%;
+            height: 400px;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+            display: none;
+        }
+    }
+</style>
+
