@@ -22,14 +22,15 @@ import Footer from '../components/Footer.astro';
 		<div class="bg-white h-20 flex items-center">
 			<header class="flex justify-between container max-w-6xl mx-auto">
 				<div class="flex pt-1">
-					<img
+					<a aria-label="Inicio" href="/"
+					><img
 						src="https://assets.prod.deuna.io/assets/5fe6067e-0e11-4869-9118-ad3dcc8765c2/kfc-logo-4712cdc128a8f9435acee236e7178eeb3efb61239732f0563e600f097703106d.png"
 						alt="Logo"
-						class="h-8 w-26 mr-10 ml-[-84px]"
-					/>
+						class="h-8 w-26 mr-10 ml"
+						/></a>
 					<menu>
 						<ul class="flex space-x-4 pt-2">
-							<li class="font-semibold"><a href="#">Ordenar</a></li>
+							<li class="font-semibold"><a href="/ordenar">Ordenar</a></li>
 							<li class="font-semibold"><a href="/contacto">Contactos</a></li>
 							<li class="font-semibold"><a href="/restaurante">Restaurantes</a></li>
 							<li class="font-semibold"><a href="/nosotros">Nosotros</a></li>
